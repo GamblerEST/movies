@@ -1,0 +1,592 @@
+{
+	"info": {
+		"_postman_id": "d27cf21e-7ff0-40f2-be82-d43ad25f2270",
+		"name": "Movie Database API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46306927",
+		"_collection_link": "https://orange-crescent-698881.postman.co/workspace/Movie-Database-API~64d74f19-49e1-4c60-92c3-b0ea1b579df4/collection/46306927-d27cf21e-7ff0-40f2-be82-d43ad25f2270?action=share&source=collection_link&creator=46306927"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"kooduser\",\n  \"password\": \"mikkmerila\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid birth date",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"bio\": \"An aspiring actor with a passion for dramatic roles.\",\n    \"birth_date\": \"1990-13-21\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all actors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"kooduser\",\n  \"password\": \"mikkmerila\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"kooduser\",\n  \"password\": \"mikkmerila\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all genres",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"kooduser\",\n  \"password\": \"mikkmerila\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/genres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"genres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid patch",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"bio\": \"An aspiring actor with a passion for dramatic roles.\",\n    \"birth_date\": \"1990-13-21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/actors/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"actors",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies in genre",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"kooduser\",\n  \"password\": \"mikkmerila\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movies?genreId=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "genreId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add actor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"bio\": \"An aspiring actor with a passion for dramatic roles.\",\n    \"birth_date\": \"1990-11-21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add actor in movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 38,\n    \"name\": \"John Doe\",\n    \"birthDate\": \"1990-12-21\",\n    \"bio\": \"An aspiring actor with a passion for dramatic roles.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movies/5/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies",
+						"5",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actors in a movie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"bio\": \"An aspiring actor with a passion for dramatic roles.\",\n    \"birth_date\": \"1990-13-21\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movies/5/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies",
+						"5",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies starring an actor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"bio\": \"An aspiring actor with a passion for dramatic roles.\",\n    \"birth_date\": \"1990-13-21\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movies?actorId=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "actorId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update actors in a movie",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"actorIds\": [1, 2, 4]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movies/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies made in a specific year",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"actorIds\": [1, 2, 4]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movies?year=2016",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2016"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete genre",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/genres/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"genres",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete genre with force",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MjkxNDg0MCwiZXhwIjoxNzUzMDAxMjQwfQ.I1GjMHcpPfs9OzREIPNgkIqL2ErjoWh9r0ow_Dn3fxI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/genres/4?force=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"genres",
+						"4"
+					],
+					"query": [
+						{
+							"key": "force",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New movie with genres and actors",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
